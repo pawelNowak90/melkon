@@ -1,0 +1,26 @@
+nav {
+  background-color: green;
+}
+
+header {
+  background-color: grey;
+}
+
+section .banner {
+  text-align: center;
+}
+
+section .banner h2 {
+  margin-top: 150px;
+  color: #7fcc2b;
+}
+
+footer {
+  background-color: orangered;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=main.css.map */
