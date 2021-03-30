@@ -3,19 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
+    <meta name="author" content="Paweł Nowak" />
     <title>melkon.pl</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+	<!-- <link rel="stylesheet" href="./css/fontAwesome_all.css"> -->
+    <script src="https://kit.fontawesome.com/15ac958f72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <script src="./js/email_js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+    <script>
+            (function() {
+            emailjs.init("user_muSC8NnjmLgaWEoB7Gsn9");
+            })();
+            </script>
+
+        <script>
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    // emailjs.sendForm('gmail', 'template_iiz8eu5', tempParams)
+                    //     .then(function(res) {
+                    //         console.log('SUCCESS!', res.status);
+                    //     }, function(error) {
+                    //         console.log('FAILED...', error);
+                    //     });
+                });
+            }
+        </script>
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">melkon</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#"> <img src="./img/logo-small.png" alt="logo-melkon"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Przełącz nawigację">
+                    <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,12 +64,13 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Płyn do dezynfekcji</a>
                     <a class="dropdown-item" href="#">Maseczki</a>
+                    <a class="dropdown-item" href="#">Zestawy powitalne</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Zestawy</a>
+                    <a class="dropdown-item" href="./contact/index.html">Inne produkty</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">KONTAKT</a>
+                  <a class="nav-link active" href="./contact.html">KONTAKT</a>
                 </li>
               </ul>
               <!-- <form class="form-inline my-2 my-lg-0">
@@ -52,20 +84,105 @@
         <article>
             <section>
                 <article class="banner">
-                    <h2>Melkon.pl - strona w budowie</h2>
-                    <div class="image">
-                        <img src="./img/logo-melkon.png" alt="logo firmy">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4 banner--description">
+                                <h2>Podaruj</h2>
+                                <h2>bezpieczeństwo</h2>
+                                <h2>swoim bliskim</h2>
+                                <div class="banner--main_image"></div>
+                            </div >
+                            <div class="col-8 banner--bottle_image">                            </div>
+                        </div>
                     </div>
                 </article>
             </section>
-            <section></section>
-            <section></section>
+
+            <section class="main-content">
+                <div class="wrapper">
+
+                </div>
+            </section>
+
+            <section id="kontakt">
+                <h2><span> Kontakt</span></h2>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 mt-4 mt-lg-4 kontakt-right">
+                            <form id="contact-form">
+                                <div class="alert alert-warning alert-dismissible fade show" id="success_message"
+                                    role="alert" style="display:none;">
+                                    Dziękuję za kontakt.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="alert alert-warning alert-dismissible fade show" id="error_message"
+                                    role="alert" style="display:none;">
+                                    Wystąpił błąd podczas wypełniania formularza!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3>Formularz kontaktowy</h3>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="name" class="form-control" id="toName"
+                                            placeholder="Twoje imię">
+                                        <!-- <p class="error" id="error-name">Nazwa użytkownika jest zbyt długa.</p> -->
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="email" name="user_email" class="form-control" id="fromName"
+                                            placeholder="Twój e-mail" required maxlength="50">
+                                        <!-- <p class="error" id="error-email">Niepoprawny adres e-mail.</p> -->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="6" name="message" id="message"
+                                        placeholder="Twoja wiadomość"></textarea>
+                                </div>
+
+                                <div class="text-center">
+
+                                    <button onClick="sendMail()"> Wyślij wiadomość </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 
     <footer>
-        <div class="signature">
-            <p></p>
+        <div class="col-lg-4 mt-lg-4">
+            <div class="info kontakt-left">
+                <div class="row">
+                    <div class="col-md-6 col-lg-12 mb-4">
+                        <i class="far fa-address-card"></i>
+                        <h4>Nazwa Firmy:</h4>
+                        <p>MELKON ZOFIA KOZIOŁ</p>
+                    </div>
+                    <div class="col-md-6 col-lg-12 mb-4">
+                        <i class="fas fa-at"></i>
+                        <h4>Email:</h4>
+                        <p><a href="mailto:info@melkon.pl">info@melkon.pl</a> </p>
+                    </div>
+
+                    <div class="col-md-6 col-lg-12 mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                        Adres:
+                        ul. Synów Pułku 11/14
+                        22-100 Chełm
+                        Polska
+                        <h4>Telefon:</h4>
+                        <p> <a href="tel:500000000"> 500-000-000</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -73,5 +190,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="./js/main.js"></script>
 </body>
 </html>

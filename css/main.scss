@@ -1,9 +1,17 @@
+@import 'variables';
 @import 'nav';
 @import 'header';
 @import 'section1';
+@import 'section2-main-content';
+@import 'section3-kontakt';
 @import 'footer';
 
 *{
     margin:0;
     padding:0;
+}
+body, html{
+    height:100%;
+    color:$font-color;
+    box-sizing: content-box;
 }

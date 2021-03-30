@@ -1,3 +1,20 @@
 header{
     background-color: grey;
+    nav{
+        border-bottom:$melkon-color solid 2px;
+        text-align:center;
+        a.navbar-brand{
+            margin:0 30px 0 10px;
+            img{
+                width:130px;
+                height:auto;
+            }
+        }
+        button.navbar-toggler{
+            i{
+                font-size: 1.45em;
+                color:$melkon-color;
+            }
+        }
+    }
 }

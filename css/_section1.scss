@@ -1,9 +1,26 @@
 section{
     .banner{
+        height:calc(100vh - 66px);  //sprawdziź wysokość navigacji
         text-align:center;
-        h2{
-            margin-top:150px;
-            color:rgb(127,204,43);
+        .banner--description{
+            padding:30px;
+            h2{
+                color:rgb(127,204,43);
+            }
         }
+        .banner--main_image{
+            background-image:url('../img/seniors-small.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .banner--bottle_image{
+            height:100vh;
+            background-image:url('../img/melkon-plyn.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
     }
 }
