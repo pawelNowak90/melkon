@@ -1,0 +1,43 @@
+// @font-face {
+//     font-family: "Comfortaa";
+//     src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf") format("ttf");
+//   }
+
+section{
+    .banner{
+        height:calc(90vh - 66px);  //sprawdziź wysokość navigacji
+        text-align:center;
+        overflow:hidden;
+        .banner--description{
+            font-family: 'Comfortaa';
+            padding:30px;
+            h2{
+                color:rgb(127,204,43);
+            }
+            .banner--main_image{
+                height:50%;
+                background-image:url('../img/seniors-small.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .banner--bottle_image{
+            height:80vh;
+            background-image:url('../img/plyn.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            a{
+                display:block;
+                height:80vh;
+                // position:absolute;
+                // top:0;
+                // left:0;
+
+            }
+        }
+
+    }
+}

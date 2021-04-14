@@ -1,13 +1,14 @@
-@import 'variables';
-@import 'nav';
-@import 'header';
-@import 'section1';
-@import 'section2-main-content';
-@import 'section3-kontakt';
-@import 'footer';
+
+@import '_00-fonts';
+@import '_00-variables';
+@import '_01-header';
+@import '_02-nav';
+@import '_03-section1-banner';
+@import '_04-section2-products';
+@import '_05-section3-kontakt';
+@import '_06-footer';
 
 *{
-    margin:0;
     padding:0;
 }
 body, html{
