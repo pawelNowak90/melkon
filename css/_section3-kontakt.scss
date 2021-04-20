@@ -1,3 +1,13 @@
 section#kontakt{
     border-top:solid 2px $melkon-color;
 }
+
+section {
+    h1 {
+        text-align: center;
+        color: $primary;
+        font-weight: 300;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+    }
+}

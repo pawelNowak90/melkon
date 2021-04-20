@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'nav';
 @import 'header';
-@import 'section1';
+@import 'banner';
 @import 'section2-main-content';
 @import 'section3-kontakt';
 @import 'footer';
@@ -14,4 +14,26 @@ body, html{
     height:100%;
     color:$font-color;
     box-sizing: content-box;
+}
+
+a{
+    color: $link-color;
+    text-decoration: underline;
+    &:hover, &:focus, &:active {
+        font-weight: 500;
+        color: darken($link-color, 10%);
+    };
+}
+.btn-primary{
+    background: $primary;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: .7em 1em;
+    outline: none !important;
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+            background: darken($primary, 5%);
+        }
+    }
 }

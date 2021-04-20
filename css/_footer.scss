@@ -1,4 +1,8 @@
 footer{
-    background-color: $melkon-color; //wyrzucić tą linie
-    opacity:0.9;                    //wyrzucić tą linie
+    padding: 30px 0;
+    background-color: $melkon-color;
+    opacity:0.9;
+    .company-name {
+        font-weight: 500;
+    }
 }
